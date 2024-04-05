@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="chat.component.css">
+<title>Friendly Chat</title>
+</head>
+<body>
+<nav>
+    <div><img src="assets/logo.jpeg" class="chat_app_logo" alt="chat app logo">
+        <p> Friendly Chat</p>
+    </div>
+    <div class="menu"><img src="{{user.profile}}" class="profile_image" alt="profile image">
+        <p> {{user.name}}</p>
+        <button class="more_button" (click)="toggleDiv()"><img src="assets/more.png" class="more_icon" alt=""></button>
+    </div>
+</nav>
+
+<section>
+    <div *ngIf="isVisible" class="logout">
+        <p>{{user.name}}</p>
+        <button (click)="this.chatService.logout()">Logout</button>
+    </div>
+    <div class="chat_section">
+        <div *ngFor="let message of (messages$ | async)?.reverse() as messages;" class="message_detail">
+            <div class="message_user_detail"><img [src]="message['profilePicUrl']" class="profile_image" alt="">
+                <p>{{message['name']}}:</p>
+            </div>
+            <div class="message">
+                <div *ngIf="message['text'] && message['text'].length > 0">{{message['text']}}</div>
+                <div *ngIf="message['imageUrl'] && message['imageUrl'].length > 0">
+                    <img [src]="message['imageUrl']" alt="image" class="image"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="message_box">
+    <div>
+        <input type="file" class="hidden" (change)="this.uploadImage($event)" #fileUpload>
+        <button (click)="fileUpload.click()">+</button>
+        <input type="text" [(ngModel)]="text" placeholder="Write your message">
+        <button (click)="sendTextMessage()">Send</button>
+    </div>
+</div>
+
+
+</body>
+</html>

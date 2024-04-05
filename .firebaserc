@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "friendlychat-cdc5f": {
+      "hosting": {
+        "firechat": [
+          "friendlychat-cdc5f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "friendlychat-cdc5f"
+  }
+}

@@ -1,0 +1,123 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(76, 175, 80);
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+}
+.more_icon {
+    width: 15px;
+}
+.chat_app_logo {
+    width: 40px;
+    mix-blend-mode: hard-light;
+}
+nav .more_button {
+    background-color: rgb(76, 175, 80);
+    border: 1px solid rgb(76, 175, 80);
+    color: white;
+    font-weight: bold;
+}
+section {
+    display: flex;
+    justify-content: center;
+}
+.chat_section {
+    padding-top: 60px;
+    width: 80%;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 80px;
+}
+nav > div {
+    display: flex;
+    gap: 5px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px 5px;
+}
+.message_box {
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+    background-color: rgb(255, 193, 7);
+}
+.message_box div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3px;
+    width: 80%;
+}
+.message_box button {
+    background-color: rgb(244, 67, 54);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.message_box input {
+    width: 80%;
+    padding-left: 5px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgb(156, 39, 176);
+}
+.logout {
+    position: fixed;
+    padding: 10px 0px 0px 10px;
+    box-shadow: 0 4px 8px 0 rgba(255, 87, 34, 0.2), 0 6px 20px 0 rgba(255, 87, 34, 0.19);
+    width: 200px;
+    height: 150px;
+    background-color: rgb(103, 58, 183);
+    right: 0px;
+    top: 45px;
+}
+.logout button {
+    margin-top: 5px;
+    padding: 3px 7px;
+    border-radius: 5px;
+    border-color: rgb(103, 58, 183);
+}
+.profile_image {
+    width: 20px;
+    border-radius: 50%;
+}
+.message_detail {
+    padding-left: 10px;
+}
+.message_user_detail {
+    display: flex;
+    align-items: end;
+    gap: 5px;
+    color: rgb(96, 125, 139);
+    margin-bottom: 10px;
+}
+.message {
+    margin-left: 20px;
+    background-color: rgb(255, 152, 0);
+    border-radius: 10px;
+    max-width: 30%;
+    padding: 10px 10px;
+    margin-bottom: 15px;
+}
+.hidden {
+    display: none;
+}
+.message .image {
+    width: 100px;
+}
+@media screen and (max-width: 600px) {
+    .message {
+        margin-left: 20px;
+        background-color: rgb(255, 152, 0);
+        border-radius: 10px;
+        min-width: fit-content;
+        padding: 10px 10px;
+        margin-bottom: 15px;
+    }
+}
